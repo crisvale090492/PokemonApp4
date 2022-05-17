@@ -52,6 +52,17 @@
                     android:src="@mipmap/ic_recarga"
                     android:layout_marginEnd="15dp"/>
             </LinearLayout>
+            <ProgressBar
+                android:id="@+id/horizontalProgressbar"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="30dp"
+                android:progressDrawable="@color/green"
+                app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
 
         </LinearLayout>

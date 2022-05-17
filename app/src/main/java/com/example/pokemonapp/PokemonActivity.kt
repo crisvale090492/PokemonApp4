@@ -30,10 +30,15 @@ class PokemonActivity : AppCompatActivity() {
         if (pokemonJson != null) {
             val pokemon = Pokemon.fromJson(pokemonJson)
             Picasso.get().load(pokemon.sprites.frontDefault).into(binding.ivPokemon)
-            binding.tvPokemonNombre.text = pokemon.nameCapitalized()
+            binding.tvPokemonNombre.text = "Nombre: " +pokemon.nameCapitalized()
+            pokemon.iniciarVida()
             binding.horizontalProgressbar.max = pokemon.vidaMaxima
-            binding.tvAltura.text = pokemon.height.toString()
-            binding.tvPeso.text = pokemon.weight.toString()
+            binding.horizontalProgressbar.progress = pokemon.vidaActual
+            binding.tvVidaMaxVidaActual.text = "PS: "+ pokemon.vidaActual.toString() +"/"+ pokemon.vidaMaxima.toString()
+       // if (binding.horizontalProgressbar.progress > binding.horizontalProgressbar.max*0.7)
+            //binding.horizontalProgressbar.setBackgroundColor()= "@color/green"
+            binding.tvAltura.text = "Tamaño: "+ pokemon.height.toString()
+            binding.tvPeso.text = "peso: "+ pokemon.weight.toString()
             val image1 = pokemon.obtenerImagenTipo1()
             if (image1 != null)
                 binding.ivTipo1.setImageResource(image1)

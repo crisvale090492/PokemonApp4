@@ -30,10 +30,10 @@
 
         <ImageView
             android:id="@+id/ivPokemon"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            tools:src="@tools:sample/avatars"
-            android:contentDescription="@string/pokemon_picture" />
+            android:layout_width="185dp"
+            android:layout_height="288dp"
+            android:contentDescription="@string/pokemon_picture"
+            tools:src="@tools:sample/avatars" />
 
 
         <LinearLayout
@@ -70,25 +70,37 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/tvVidaMaxVidaActual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Vida Pokemon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:layout_weight="0"
+                android:layout_height="51dp"
                 android:layout_margin="10dp"
+                android:layout_weight="0"
                 android:orientation="horizontal">
+
                 <ImageView
                     android:id="@+id/iv_tipo1"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@mipmap/ic_recarga"
-                    android:layout_marginEnd="15dp"/>
+                    android:layout_marginEnd="15dp"
+                    android:src="@mipmap/ic_recarga" />
+
                 <ImageView
                     android:id="@+id/iv_tipo2"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@mipmap/ic_recarga"
-                    android:layout_marginEnd="15dp"/>
+                    android:layout_marginEnd="15dp"
+                    android:src="@mipmap/ic_recarga" />
             </LinearLayout>
 
 
@@ -103,6 +115,9 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingHorizontal="30dp"
+        android:progressTint="@color/green"
+        android:secondaryProgressTint="@color/white"
+        android:progressDrawable="@color/red"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
