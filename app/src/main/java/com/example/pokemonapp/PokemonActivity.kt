@@ -31,12 +31,9 @@ class PokemonActivity : AppCompatActivity() {
             val pokemon = Pokemon.fromJson(pokemonJson)
             Picasso.get().load(pokemon.sprites.frontDefault).into(binding.ivPokemon)
             binding.tvPokemonNombre.text = "Nombre: " +pokemon.nameCapitalized()
-            pokemon.iniciarVida()
             binding.horizontalProgressbar.max = pokemon.vidaMaxima
             binding.horizontalProgressbar.progress = pokemon.vidaActual
             binding.tvVidaMaxVidaActual.text = "PS: "+ pokemon.vidaActual.toString() +"/"+ pokemon.vidaMaxima.toString()
-       // if (binding.horizontalProgressbar.progress > binding.horizontalProgressbar.max*0.7)
-            //binding.horizontalProgressbar.setBackgroundColor()= "@color/green"
             binding.tvAltura.text = "Tamaño: "+ pokemon.height.toString()
             binding.tvPeso.text = "peso: "+ pokemon.weight.toString()
             val image1 = pokemon.obtenerImagenTipo1()

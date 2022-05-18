@@ -2,6 +2,8 @@ package com.example.pokemonapp
 
 import android.content.Context
 import android.content.Intent
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,6 +41,18 @@ class AdapterPokemon : RecyclerView.Adapter<AdapterPokemon.PokemonViewHolder>() 
 
         holder.pokemonBinding.root.setOnClickListener {
             PokemonActivity.start(pokemon, holder.pokemonBinding.root.context)
+        }
+
+        holder.pokemonBinding.horizontalProgressbar.apply {
+            max = pokemon.vidaMaxima
+            progress = pokemon.vidaActual
+            progressTintList = ColorStateList.valueOf(
+                when {
+                    pokemon.vidaActual < pokemon.vidaMaxima*0.15 ->Color.RED
+                    pokemon.vidaActual < pokemon.vidaMaxima*0.5 ->Color.YELLOW
+                    else ->Color.GREEN
+                }
+            )
         }
     }
 
